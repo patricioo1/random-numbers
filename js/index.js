@@ -9,9 +9,6 @@ const randomNumbers = () => {
         let randomNumber = Math.floor(Math.random() * 100) + 1;
         if (randomArray.indexOf(randomNumber) !== -1) {
             console.log('This number already exist', randomNumber);
-            randomNumber = Math.floor(Math.random() * 100) + 1;
-            console.log(randomNumber);
-            randomArray.push(randomNumber)
         } else {
             randomArray.push(randomNumber);
         }
