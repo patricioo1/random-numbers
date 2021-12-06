@@ -6,8 +6,13 @@ const oddNumbers = document.querySelector('.odd-numbers');
 const randomNumbers = () => {
     const randomArray = [];
     for (let i = 1; i <= 20; i++) {
-        const randomNumber = Math.round(Math.random() * 100);
-        randomArray.push(randomNumber);
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+        console.log(randomArray.indexOf(randomNumber));
+        if (randomArray.indexOf(randomNumber) !== -1) {
+            console.log('This number does exist');
+        } else {
+            randomArray.push(randomNumber);
+        }
     }
     checkAndInnerNumbers(randomArray);
 }
