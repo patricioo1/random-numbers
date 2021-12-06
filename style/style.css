@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: rgb(223, 240, 241);
 }
 
@@ -21,7 +21,7 @@
 .random-numbers button {
     margin: 15px auto;
     padding: 10px;
-    border: orange;
+    border: blue;
     border-radius: 5px;
     font-weight: bold;
     background-color: blue;
