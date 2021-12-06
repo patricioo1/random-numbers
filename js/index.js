@@ -16,7 +16,7 @@ const randomNumbers = () => {
             randomArray.push(randomNumber);
         }
     }
-    checkAndInnerNumbers(randomArray);
+    sortAndFilterNumbers(randomArray);
 }
 
 const whatsTheNumber = (number) => {
@@ -33,7 +33,7 @@ const sortArray = (arr) => {
     });
 }
 
-const checkAndInnerNumbers = (arr) => {
+const sortAndFilterNumbers = (arr) => {
     sortArray(arr);
     arr.filter(whatsTheNumber);
 }
