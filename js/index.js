@@ -2,6 +2,18 @@ const generateButton = document.querySelector('button');
 const evenNumbers = document.querySelector('.even-numbers');
 const oddNumbers = document.querySelector('.odd-numbers');
 
+const renderEvenNumbers = (numbers) => {
+    numbers.forEach(num=>{
+        evenNumbers.innerHTML += `<p>${num}</p>`;
+    })
+}
+
+const renderOddNumbers = (numbers) => {
+    numbers.forEach(num=>{
+        oddNumbers.innerHTML += `<p>${num}</p>`;
+    })
+}
+
 
 const randomNumbers = () => {
     const randomArray = [];
@@ -16,23 +28,34 @@ const randomNumbers = () => {
     sortAndFilterNumbers(randomArray);
 }
 
-const whatsTheNumber = (number) => {
-    if (number % 2 === 0) {
-        evenNumbers.innerHTML += `<p>${number}</p>`;
-    } else {
-        oddNumbers.innerHTML += `<p>${number}</p>`;
+// const whatsTheNumber = (number) => {
+//     if (number % 2 === 0) {
+//         evenNumbers.innerHTML += `<p>${number}</p>`;
+//     } else {
+//         oddNumbers.innerHTML += `<p>${number}</p>`;
+//     }
+// }
+
+const isEven = (number) => number % 2 === 0;
+
+const seperateEvenAndOddNumbers = (numbers) => {
+    return {
+        even: numbers.filter(n=> isEven(n)),
+        odd: numbers.filter(n=> !isEven(n))
     }
 }
 
-const sortArray = (arr) => {
-    arr.sort((a, b) => {
+const sortInAscendingOrder = (arr) => {
+    return arr.sort((a, b) => {
         return a - b;
     });
 }
 
 const sortAndFilterNumbers = (arr) => {
-    sortArray(arr);
-    arr.filter(whatsTheNumber);
+    const sortedArray = sortInAscendingOrder(arr);
+    const {even, odd} = seperateEvenAndOddNumbers(sortedArray);
+    renderOddNumbers(odd);
+    renderEvenNumbers(even);
 }
 
 const clearColumns = () => {
