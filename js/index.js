@@ -27,15 +27,6 @@ const randomNumbers = () => {
     }
     sortAndFilterNumbers(randomArray);
 }
-
-// const whatsTheNumber = (number) => {
-//     if (number % 2 === 0) {
-//         evenNumbers.innerHTML += `<p>${number}</p>`;
-//     } else {
-//         oddNumbers.innerHTML += `<p>${number}</p>`;
-//     }
-// }
-
 const isEven = (number) => number % 2 === 0;
 
 const seperateEvenAndOddNumbers = (numbers) => {
